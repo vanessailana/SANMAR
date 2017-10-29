@@ -14,8 +14,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+  
+                 <nav class="navbar navbar-dark bg-dark navbar-static-top" id="navbar">
+            <a class="navbar-brand" href="#">
+                <img src="https://i.imgur.com/uq48fhml.jpg" height="70" margin-top="50px"  width="100">
             <div class="container">
                 <div class="navbar-header">
 
@@ -29,7 +31,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                       
+                       SANMAR
                     </a>
                 </div>
 
@@ -47,11 +49,11 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="font-size:30px" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu" style="font-style: 30px">
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

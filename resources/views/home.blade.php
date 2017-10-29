@@ -1,23 +1,127 @@
+@section('content')
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<!-- Admin UI requirements: -->
+<!-- add/edit/delete accounts receivable -->
+<!-- add/edit/delete accounts payable -->
+<!-- add/edit/delete photos -->
+<!-- email option -->
 
-                    You are logged in!
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Admin Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    <!-- page banner -->
+    <div class="jumbotron">
+        <div class="container ">
+            <h1>Administration Page</h1>            
+        </div>
+    </div>
+
+    <!-- administration buttons -->
+    <div class="container-fluid">
+        <!-- top row of options -->
+        <div class="row align-item-center">
+            <!-- add/edit/delete properties -->
+            <div class="col-md-4">
+                <div class="card border-light h-100">
+                    <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Add/Edit/Delete Properties
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Properties</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- add/edit/delete property_info -->
+            <div class="col-md-4">
+                <div class="card border-light h-100">
+                    <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Add/Edit/Delete Property Information
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Property Information</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- add/edit/delete tenants -->
+            <div class="col-md-4">
+                <div class="card border-light h-100">
+                    <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Add/Edit/Delete Tenants
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Tenants</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bottom row of options -->
+        <div class="row align-item-center">
+            <!-- add/edit/delete accounts_payable -->
+            <div class="col-md-4">
+                <div class="card border-light h-100">
+                    <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Add/Edit/Delete Accounts Payable
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Accounts Payable</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- add/edit/delete accounts_receivable -->
+            <div class="col-md-4">
+                <div class="card border-light h-100">
+                    <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Add/Edit/Delete Accounts Receivable
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Accounts Receivable</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- add/edit/delete photos -->
+            <div class="col-md-4">
+                <div class="card border-light h-100">
+                    <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Add/Edit/Delete Photos
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Photographs</button>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="col-md-4">
+                <div class="card border-light h-100">
+                    <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Send an Email 
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Send An Email</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+   
+
 @endsection
