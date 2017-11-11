@@ -15,14 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/image-gallery', function () {
+    return view('image-gallery');
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
+//image routes
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('image-gallery', 'ImageGalleryController@index');
+Route::post('image-gallery', 'ImageGalleryController@upload');
+Route::delete('image-gallery/{id}', 'ImageGalleryController@destroy');
