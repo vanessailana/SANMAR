@@ -107,6 +107,8 @@
 
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/tenants/create') }}">Add A Tenant</a>
+
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
