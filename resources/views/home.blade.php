@@ -63,7 +63,12 @@
                     <div class="card-body">
                         <p class="card-text">
                             Add/Edit/Delete Tenants
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Tenants</button>
+                             
+                               <a    href="{{ URL::route('#') }}" class="btn btn-secondary btn-lg btn-block">Property Information
+                               </a>
+
+
+
                         </p>
                     </div>
                 </div>
