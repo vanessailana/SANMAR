@@ -1,3 +1,5 @@
+
+
 <!-- app/views/nerds/index.blade.php -->
 
 <!DOCTYPE html>
@@ -107,7 +109,7 @@
 
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
-                        <a href="{{ url('/tenants/create') }}">Add A Tenant</a>
+                        <a href="{{ url('/property/create') }}">Add Info About A Property</a>
 
                     @else
                         <a href="{{ route('login') }}">Login</a>
@@ -119,7 +121,7 @@
 
 
 @auth
-<h1>View All The Tenants</h1>
+<h1>View Info about Property</h1>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
@@ -129,21 +131,33 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <td>Tenant Name</td>
-            <td>Tenant Last Name</td>
-            <td>Email</td>
-            <td>Phone number</td>
-            <td>Currently At</td>
+            <td>Property</td>
+            <td>Unit</td>
+            <td>Unit Type</td>
+            <td>SF</td>
+            <td>Current rent</td>
+            <td>lease starts </td>
+            <td>lease termination </td>
+            <td>increases</td>
+             <td>expenses</td>
+             <td> remarks </td>
         </tr>
     </thead>
     <tbody>
     @foreach($nerds as $key => $value)
         <tr>
-            <td>{{ $value->tenant_name }}</td>
-            <td>{{ $value->tenant_lastname }}</td>
-            <td>{{ $value->email }}</td>
-            <td>{{ $value->phone_number}}</td>
-            <td>{{ $value->currentlyat}}</td>
+            <td>{{ $value->property }}</td>
+            <td>{{ $value->unit}}</td>
+            <td>{{ $value->unit_type}}</td>
+            <td>{{ $value->SF}}</td>
+            <td>{{ $value->Currentrent}}</td>
+            <td>{{ $value->lease_starts}}</td>
+            <td>{{ $value->lease_termination}}</td>
+            <td>{{ $value->increases}}</td>
+
+            <td>{{ $value->expenses}}</td>
+
+            <td>{{ $value->remarks}}</td>
             <!-- we will also add show, edit, and delete buttons -->
             <td>
 
@@ -151,16 +165,16 @@
 
                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
 
-                  {{ Form::open(array('url' => 'tenants/' . $value->id, 'class' => 'pull-right')) }}
+                  {{ Form::open(array('url' => 'property/' . $value->id, 'class' => 'pull-right')) }}
 
                     {{ Form::hidden('_method', 'DELETE') }}
 
 
-                    {{ Form::submit('Delete this Tenant', array('class' => 'btn btn-warning')) }}
+                    {{ Form::submit('Delete this', array('class' => 'btn btn-warning')) }}
                 {{ Form::close() }}
 
 
-                <a class="btn btn-small btn-info" href="{{ URL::to('tenants/' . $value->id . '/edit') }}">Edit this Tenant</a>
+                <a class="btn btn-small btn-info" href="{{ URL::to('property/' . $value->id . '/edit') }}">Edit this Tenant</a>
 
             </td>
         </tr>
