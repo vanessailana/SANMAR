@@ -13,7 +13,8 @@ class PropertyInformation extends Migration
      */
     public function up()
     {
-          Schema::create('property_information', function (Blueprint $table) {
+    Schema::create('property_information', function (Blueprint $table) {
+     $table->increments('id');
     $table->string('property');
     $table->string('unit');
     $table->string('unit_type');
