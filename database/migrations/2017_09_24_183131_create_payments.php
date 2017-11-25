@@ -14,6 +14,7 @@ class CreatePayments extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
+            $table->increments('id');
              $table->string('company');
              $table->string('property')->nullable(false);
              $table->integer('rents_to_collect');
