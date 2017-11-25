@@ -77,8 +77,7 @@
                     <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
                     <div class="card-body">
                         <p class="card-text">
-                            Add/Edit/Delete Accounts Payable
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Accounts Payable</button>
+                          <a href="{{ url('/tenants')}}" class="btn btn-secondary btn-lg btn-block" role="button"> Add, Delete, or Edit Accounts Receivable <i class="fa fa-user-circle-o" aria-hidden="true"></i></i> </a>
                         </p>
                     </div>
                 </div>
