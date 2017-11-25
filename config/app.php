@@ -162,6 +162,7 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
+
         Illuminate\View\ViewServiceProvider::class,
 
         /*
@@ -191,7 +192,7 @@ return [
     */
 
     'aliases' => [
-
+           'Input'     => Illuminate\Support\Facades\Input::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
