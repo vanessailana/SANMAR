@@ -27,7 +27,8 @@ return view('contactUS');
        ), function($message)
    {
        $message->from('klotzmanv@gmail.com','Admin');
-       $message->to('vanessa.klotzman@icloud.com')->subject('Hello, From SANMAR');
+       $message->to('vanessa.klotzman@icloud.com')->subject('Hello, From SANMAR') ||
+      $message->to('klotzmanv@gmail.com')->subject('Hello, I am Interested'); 
    });
  
     return back()->with('success', 'Thanks for contacting us!'); 

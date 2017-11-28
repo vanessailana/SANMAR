@@ -75,14 +75,18 @@
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
-                       
+                  <a  href="{{ url('/image-gallery')}}">Property Images</a>
                     @endauth
                 </div>
             @endif
  
 <div class="container">
+	@auth
 <h1>Send an Email</h1>
- 
+@else
+ <h1>Email About Inquiries</h1>
+
+ @endauth
 @if(Session::has('success'))
    <div class="alert alert-success">
      {{ Session::get('success') }}
@@ -96,13 +100,28 @@
 {!! Form::text('name', old('name'), ['class'=>'form-control', 'placeholder'=>'Enter Name']) !!}
 <span class="text-danger">{{ $errors->first('name') }}</span>
 </div>
- 
+@auth
 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
 {!! Form::label('Email:') !!}
-{!! Form::text('email', old('email'), ['class'=>'form-control', 'placeholder'=>'Enter Email']) !!}
+{!! Form::text('email', old('email'), ['class'=>'form-control',
+
+'placeholder'=>'Enter Email']) !!}
+<span class="text-danger">{{ $errors->first('email') }}</span>
+</div>
+
+@else
+
+<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+{!! Form::label('Email:') !!}
+{!! Form::text('email', old('email'), ['class'=>'form-control',
+
+'placeholder'=>'Enter Email Provided By Company']) !!}
 <span class="text-danger">{{ $errors->first('email') }}</span>
 </div>
  
+ @endauth
+ 
+
 <div class="form-group {{ $errors->has('message') ? 'has-error' : '' }}">
 {!! Form::label('Message:') !!}
 {!! Form::textarea('message', old('message'), ['class'=>'form-control', 'placeholder'=>'Enter Message']) !!}

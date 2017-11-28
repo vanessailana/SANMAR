@@ -87,9 +87,6 @@
                 <a href="{{ url('/image-gallery')}}" class="btn btn-success" role="button">View Property Images Or Inquiry About A Property <i class="fa fa-user-circle-o" aria-hidden="true"></i></i> </a>
 
 
-</center>
-
-
 </div>
 
 </div>

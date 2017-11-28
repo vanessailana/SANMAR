@@ -146,6 +146,12 @@
                 <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
                     <a class="thumbnail fancybox" rel="ligthbox" href="/images/{{ $image->image }}">
                         <img class="img-responsive" alt="" src="/images/{{ $image->image }}" />
+ @auth
+ @else                      
+<a  href="{{ url('/contact-us')}}" class="btn btn-primary">Email About Inquires</a>
+</center>
+@endauth
+
                         <div class='text-center'>
                             <small class='text-muted'>{{ $image->title }}</small>
                         </div> <!-- text-center / end -->
