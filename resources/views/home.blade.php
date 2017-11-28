@@ -101,8 +101,11 @@
                     <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
                     <div class="card-body">
                         <p class="card-text">
-                            Add/Edit/Delete Photos
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Photographs</button>
+                           
+
+                            <a href="{{ url('/image-gallery')}}" class="btn btn-secondary btn-lg btn-block" role="button"> Add And Delete Property Images <i class="fa fa-user-circle-o" aria-hidden="true"></i></i> </a>
+
+
                         </p>
                     </div>
                 </div>
