@@ -117,10 +117,7 @@
                 <div class="card border-light h-100">
                     <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
                     <div class="card-body">
-                        <p class="card-text">
-                            Send an Email 
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Send An Email</button>
-                        </p>
+                        <a href="{{ url('/contact-us')}}" class="btn btn-secondary btn-lg btn-block" role="button"> Send An Email <i class="fa fa-user-circle-o" aria-hidden="true"></i></i> </a>
                     </div>
                 </div>
             </div>
