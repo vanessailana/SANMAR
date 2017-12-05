@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/image-gallery', function () {
+    return view('image-gallery');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -24,8 +29,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
+
+//image routes
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
     Route::resource('leases', 'LeaseController');
+
+Route::get('contact-us', 'ContactUSController@contactUS');
+Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUSController@contactUSPost']);
+
+Route::get('image-gallery', 'ImageGalleryController@index');
+Route::post('image-gallery', 'ImageGalleryController@upload');
+Route::delete('image-gallery/{id}', 'ImageGalleryController@destroy');
+
