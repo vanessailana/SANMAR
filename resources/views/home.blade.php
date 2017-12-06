@@ -50,7 +50,7 @@
                     <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
                     <div class="card-body">
                         <p class="card-text">
-                            Add/Edit/Delete Property Information
+                            
     <a href="{{ url('/leases')}}" class="btn btn-secondary btn-lg btn-block" role="button"> Add, Delete, or Edit Property Information <i class="fa fa-user-circle-o" aria-hidden="true"></i></i> </a>
                         </p>
                     </div>
