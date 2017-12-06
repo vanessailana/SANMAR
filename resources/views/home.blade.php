@@ -98,8 +98,7 @@
                     <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
                     <div class="card-body">
                         <p class="card-text">
-                            Add/Edit/Delete Accounts Receivable
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Accounts Receivable</button>
+                            <a href="{{ url('/contact-us')}}" class="btn btn-secondary btn-lg btn-block" role="button"> Send An Email <i class="fa fa-user-circle-o" aria-hidden="true"></i></i> </a>
                         </p>
                     </div>
                 </div>
@@ -122,15 +121,7 @@
         </div>
     </div>
 
-    <div class="col-md-4">
-                <div class="card border-light h-100">
-                    <img src="https://i.imgur.com/JUPgzwZ.png" class="img-fluid" alt="Card image cap" id="cardImg">
-                    <div class="card-body">
-                        <a href="{{ url('/contact-us')}}" class="btn btn-secondary btn-lg btn-block" role="button"> Send An Email <i class="fa fa-user-circle-o" aria-hidden="true"></i></i> </a>
-                    </div>
-                </div>
-            </div>
-
+  
    
 
 @endsection
