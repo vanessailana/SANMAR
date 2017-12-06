@@ -1,9 +1,8 @@
-<!-- app/views/nerds/index.blade.php -->
-
-<!DOCTYPE html>
 <html>
-   <head>
-        <title> Hello there</title>
+<head>
+   
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+   <title> Hello there</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-
+ 
         <!-- Styles -->
         <style>
             html, body {
@@ -107,8 +106,7 @@
 
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
-                        <a href="{{ url('/tenants/create') }}">Add A Tenant</a>
-
+                        <a href="{{ url('/property') }}">Property Information</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -119,57 +117,79 @@
 
 
 @auth
-<h1>View All The Tenants</h1>
+<h1>Add Information About A Property</h1>
 
-<!-- will be used to show any messages -->
-@if (Session::has('message'))
-    <div class="alert alert-info">{{ Session::get('message') }}</div>
-@endif
+{{ Form::open(array('url' => 'property')) }}
 
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <td>Tenant Name</td>
-            <td>Tenant Last Name</td>
-            <td>Email</td>
-            <td>Phone number</td>
-            <td>Currently At</td>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach($nerds as $key => $value)
-        <tr>
-            <td>{{ $value->tenant_name }}</td>
-            <td>{{ $value->tenant_lastname }}</td>
-            <td>{{ $value->email }}</td>
-            <td>{{ $value->phone_number}}</td>
-            <td>{{ $value->currentlyat}}</td>
-            <!-- we will also add show, edit, and delete buttons -->
-            <td>
+    <div class="form-group">
+        {{ Form::label('property', 'Property') }}
+        {{ Form::text('property', Input::old('property'), array('class' => 'form-control')) }}
+    </div>
+     
+        <div class="form-group">
+        {{ Form::label('unit', 'Unit') }}
+        {{ Form::text('unit', Input::old('unit'), array('class' => 'form-control')) }}
+    </div>
 
-            
+     <div class="form-group">
+        {{ Form::label('unit_type', 'Unit Type') }}
+        {{ Form::text('unit_type', Input::old('unit_type'), array('class' => 'form-control')) }}
+    </div>
+     
+        <div class="form-group">
+        {{ Form::label('SF', 'SF') }}
+        {{ Form::text('SF', Input::old('SF'), array('class' => 'form-control')) }}
+    </div>
 
-                <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
+    <div class="form-group">
+        {{ Form::label('Currentrent', 'Currentrent') }}
+        {{ Form::text('Currentrent', Input::old('Currentrent'), array('class' => 'form-control')) }}
+    </div>
 
-                  {{ Form::open(array('url' => 'tenants/' . $value->id, 'class' => 'pull-right')) }}
+       <div class="form-group">
+        {{ Form::label('lease_starts', 'lease_starts') }}
+        {{ Form::text('lease_starts', Input::old('lease_starts'), array('class' => 'form-control')) }}
+    </div>
 
-                    {{ Form::hidden('_method', 'DELETE') }}
+      <div class="form-group">
+        {{ Form::label('lease_termination', 'lease_termination') }}
+        {{ Form::text('lease_termination', Input::old('lease_termination'), array('class' => 'form-control')) }}
+    </div>
 
+      <div class="form-group">
+        {{ Form::label('increases', 'increases') }}
+        {{ Form::text('increases', Input::old('increases'), array('class' => 'form-control')) }}
+    </div>
 
-                    {{ Form::submit('Delete this Tenant', array('class' => 'btn btn-warning')) }}
-                {{ Form::close() }}
+     <div class="form-group">
+        {{ Form::label('expenses', 'expenses') }}
+        {{ Form::text('expenses', Input::old('expenses'), array('class' => 'form-control')) }}
+    </div>
 
+     <div class="form-group">
+        {{ Form::label('remarks', 'remarks') }}
+        {{ Form::text('remarks', Input::old('remarks'), array('class' => 'form-control')) }}
+    </div>
+     
+     
+     
+     
+     
+     
+     
+  
+    {{ Form::submit('Create A Entry!', array('class' => 'btn btn-primary')) }}
 
-                <a class="btn btn-small btn-info" href="{{ URL::to('tenants/' . $value->id.'/edit') }}">Edit this Tenant</a>
+{{ Form::close() }}
 
-            </td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>
 @else
-<h1> You are not authorized to view this page. </h1>
+ <h1> You are not authorized to view this page</h1>
+
 @endauth
+
+
+
+
 </div>
 </body>
 </html>

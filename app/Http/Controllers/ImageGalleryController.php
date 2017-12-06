@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,8 +17,8 @@ class ImageGalleryController extends Controller
      */
     public function index()
     {
-    	$images = ImageGallery::get();
-    	return view('image-gallery',compact('images'));
+        $images = ImageGallery::get();
+        return view('image-gallery',compact('images'));
     }
 
     /**
@@ -26,8 +28,8 @@ class ImageGalleryController extends Controller
      */
     public function upload(Request $request)
     {
-    	$this->validate($request, [
-    		'title' => 'required',
+        $this->validate($request, [
+            'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -37,8 +39,8 @@ class ImageGalleryController extends Controller
         $input['title'] = $request->title;
         ImageGallery::create($input);
 
-    	return back()
-    		->with('success','Image Uploaded successfully.');
+        return back()
+            ->with('success','Image Uploaded successfully.');
     }
 
     /**
@@ -48,8 +50,8 @@ class ImageGalleryController extends Controller
      */
     public function destroy($id)
     {
-    	ImageGallery::find($id)->delete();
-    	return back()
-    		->with('success','Image removed successfully.');	
+        ImageGallery::find($id)->delete();
+        return back()
+            ->with('success','Image removed successfully.');    
     }
 }
