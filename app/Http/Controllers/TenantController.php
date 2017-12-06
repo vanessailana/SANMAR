@@ -114,9 +114,9 @@ class TenantController extends Controller {
     public function destroy($id) {
     	$nerd=Tenant::find($id);
     	$nerd->delete();
-
-    Session::flash('message', 'Successfully deleted the Tenant!');
-        return Redirect::to('tenant');
+ Session::flash('message', 'Successfully Deleted!');
+            return Redirect::to('tenants');
+     
     }
 
 }

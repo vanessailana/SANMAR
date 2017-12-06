@@ -121,7 +121,7 @@
                 {{ Form::close() }}
 
                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                <a class="btn btn-small btn-info" href="{{ URL::to('leases/' . $value->id . '/edit') }}">Edit</a>
+                <a class="btn btn-small btn-info" href="{{ URL::to('leases/'. $value->id.'/edit') }}">Edit</a>
 
             </td>
         </tr>

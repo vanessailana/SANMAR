@@ -160,7 +160,7 @@
                 {{ Form::close() }}
 
 
-                <a class="btn btn-small btn-info" href="{{ URL::to('tenants/' . $value->id . '/edit') }}">Edit this Tenant</a>
+                <a class="btn btn-small btn-info" href="{{ URL::to('tenants/' . $value->id.'/edit') }}">Edit this Tenant</a>
 
             </td>
         </tr>
